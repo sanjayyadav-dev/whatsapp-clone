@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage x:Class="WhatsAppClone.Mobile.Views.LoginPage"
+             xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:vm="clr-namespace:WhatsAppClone.Mobile.ViewModels"
+             x:DataType="vm:LoginViewModel"
+             Shell.NavBarIsVisible="False">
+
+    <VerticalStackLayout Padding="24" Spacing="16" VerticalOptions="Center">
+        <Label Text="Enter your phone number" FontSize="22" FontAttributes="Bold" HorizontalOptions="Center" />
+        <Label Text="We will send you a 6 digit OTP" HorizontalOptions="Center" />
+        <Entry Text="{Binding Phone}" Placeholder="10 digit number" Keyboard="Telephone" MaxLength="15" />
+        <Label Text="{Binding Error}" TextColor="Red" />
+        <Button Text="Send OTP" Command="{Binding SendOtpCommand}" />
+        <ActivityIndicator IsRunning="{Binding IsBusy}" IsVisible="{Binding IsBusy}" />
+    </VerticalStackLayout>
+</ContentPage>
