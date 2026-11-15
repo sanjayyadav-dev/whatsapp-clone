@@ -22,10 +22,12 @@ public static class ServiceCollectionExtensions
         services.AddScoped<IOtpRepository, OtpRepository>();
         services.AddScoped<IUserRepository, UserRepository>();
         services.AddScoped<IDeviceRepository, DeviceRepository>();
+        services.AddScoped<IContactRepository, ContactRepository>();
 
         // Managers
         services.AddScoped<IAuthManager, AuthManager>();
         services.AddScoped<IUserManager, UserManager>();
+        services.AddScoped<IContactManager, ContactManager>();
 
         return services;
     }
